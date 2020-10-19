@@ -6,14 +6,14 @@ class Folder extends Data{
 		name = n;
 	}
 	
-	ArrayList<Data> d = new ArrayList<>();
+	ArrayList<Data> subFoldersFiles = new ArrayList<>();
 	void add(Data f) {
-		this.d.add(f);
+		this.subFoldersFiles.add(f);
 	}
 	int getSize() {
 		int sum = 0;
-		for(int i = 0; i < d.size(); i++)
-			sum = sum + d.get(i).getSize();
+		for(int i = 0; i < subFoldersFiles.size(); i++)
+			sum = sum + subFoldersFiles.get(i).getSize();
 				
 		return sum;
 	}
@@ -24,8 +24,8 @@ class Folder extends Data{
 
 	void getElement() {
 		System.out.println("folder name : "+ getName() +" has a size of : " + getSize()  );
-		for(int i = 0; i < d.size(); i++)
-			d.get(i).getElement();
+		for(int i = 0; i < subFoldersFiles.size(); i++)
+			subFoldersFiles.get(i).getElement();
 	}
 	
 }

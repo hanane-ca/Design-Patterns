@@ -5,8 +5,8 @@ import compoosite.Folder;
 
 public class User {
 	
-	Folder folder1, folder2, folder3;
-	File f1, f2, f3, f4;
+	Folder folder1, folder2;
+	File f1, f2, f3;
 	void createPattern() {
 		// Folder 1 -> file1, file2 and folder2:
 		folder1 = new Folder("A");
@@ -20,20 +20,15 @@ public class User {
 		folder2.add(f3);
 		
 		folder1.add(folder2);
-		
-		// Folder 3 -> f4:
-		folder3 = new Folder("C");
-		f4 = new File(10, "d");
-		folder3.add(f4);
+
 	}
 
 	public static void main(String[] args) {
 		User user = new User();
 		user.createPattern();
 		
-		System.out.println("Folder 1 size: " + user.folder1.getSize());
-		System.out.println("Folder 3 size: " + user.folder3.getSize());
-		user.folder1.getElement();
+		System.out.println("Folder 2 size: " + user.folder2.getSize());
+		user.folder2.getElement();
 
 	}
 
