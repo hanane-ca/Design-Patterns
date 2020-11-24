@@ -1,24 +1,24 @@
 class MergeSort extends Merge implements Strategy {
 
     @Override
-    public void sort(int[] numbers) {
-        sort(numbers, 0, numbers.length -1);
+    public void sort(Product[] list) {
+        sort(list, 0, list.length -1);
         System.out.println("sorting array using merge sort strategy");
-        printArray(numbers);
+        printArray(list);
     }
 
 }
 
 class Merge {
-    void merge(int arr[], int l, int m, int r)
+    void merge(Product arr[], int l, int m, int r)
     {
         // Find sizes of two subarrays to be merged
         int n1 = m - l + 1;
         int n2 = r - m;
  
         /* Create temp arrays */
-        int L[] = new int[n1];
-        int R[] = new int[n2];
+        Product L[] = new Product[n1];
+        Product R[] = new Product[n2];
  
         /*Copy data to temp arrays*/
         for (int i = 0; i < n1; ++i)
@@ -34,7 +34,7 @@ class Merge {
         // Initial index of merged subarry array
         int k = l;
         while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
+            if (L[i].compareTo(R[j]) <= -1) {
                 arr[k] = L[i];
                 i++;
             }
@@ -62,7 +62,7 @@ class Merge {
  
     // Main function that sorts arr[l..r] using
     // merge()
-    void sort(int arr[], int l, int r)
+    void sort(Product arr[], int l, int r)
     {
         if (l < r) {
             // Find the middle point
@@ -78,11 +78,11 @@ class Merge {
     }
  
     /* A utility function to print array of size n */
-    static void printArray(int arr[])
+    static void printArray(Product arr[])
     {
         int n = arr.length;
         for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
+            System.out.println(arr[i].toString() + " ");
         System.out.println();
     }
 }

@@ -5,7 +5,7 @@ class Context {
         this.strategy = strategy;
     }
 
-    public void arrange(int[] input) {
+    public void arrange(Product[] input) {
         strategy.sort(input);
     }
 }

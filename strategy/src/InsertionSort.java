@@ -1,19 +1,19 @@
 class InsertionSort implements Strategy {
 
-    public void sort(int[] numbers) {
-        int n = numbers.length;  
+    public void sort(Product[] list) {
+        int n = list.length;  
         for (int j = 1; j < n; j++) {  
-            int key = numbers[j];  
+            Product key = list[j];  
             int i = j-1;  
-            while ( (i > -1) && ( numbers [i] > key ) ) {  
-                numbers [i+1] = numbers [i];  
+            while ( (i > -1) && ( list [i].compareTo(key) >=1 ) ) {  
+                list [i+1] = list [i];  
                 i--;  
             }  
-            numbers[i+1] = key;  
+            list[i+1] = key;  
         }  
         System.out.println("sorting array using insertion sort strategy");
-        for (int i = 0; i < numbers.length; ++i)
-        System.out.print(numbers[i] + " ");
+        for (int i = 0; i < list.length; ++i)
+        System.out.println(list[i].toString() + " ");
     }
 }
 

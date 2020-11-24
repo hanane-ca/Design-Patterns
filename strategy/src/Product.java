@@ -12,8 +12,13 @@ public class Product implements Comparable<Product> {
     }
 
     @Override
-    public int compareTo(Product produit) {
-        return this.price - produit.price;
+    public String toString() {
+        return this.name + ' ' + this.price + ' ' + this.year;
+    }
+
+    @Override
+    public int compareTo(Product product) {
+        return this.toString().compareTo(product.toString());
     }
 
 }
