@@ -1,5 +1,4 @@
 
-
 public class Test {
 
     public static void main(String args[]) throws InterruptedException {
@@ -16,7 +15,7 @@ public class Test {
         // ctx.arrange(array);
 
         // we can sort objects
-        Product[] list = {
+        Product[] list = { 
             new Product("Watch", 49, 2015),
             new Product("Bike", 199, 2020),
             new Product("Ball", 15, 2018),
@@ -24,6 +23,10 @@ public class Test {
         };
 
         Context ctx = new Context(new QuickSort());
+        ctx.arrange(list);
+
+        // we can change the strategy without changing Context class
+        ctx = new Context(new BubbleSort());
         ctx.arrange(list);
 
         // try it yourself then …
